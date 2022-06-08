@@ -3,7 +3,7 @@
 
 
 
-        <%= render 'book', book: @new_book %>
+        <%= render partial: 'book', locals: { book: @new_book , user: @user } %>
 
 
 
@@ -13,13 +13,13 @@
           <tbody>
             <tr>
               <td>
-                <%= link_to   books_path(@user) do %>
+                <%= link_to   user_path(@user) do %>
                 <%= image_tag @user.get_profile_image(100,100) %>
                 <p><%= @user.name %></p>
                 <% end %>
               </td>
               <td>
-                <%= @book.title %>
+                <%= link_to @book.title %>
               </td>
               <td><%= @book.body %></td>
               <td>
